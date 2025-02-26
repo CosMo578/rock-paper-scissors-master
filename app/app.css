@@ -1,0 +1,107 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+@import "tailwindcss";
+@config "../tailwind.config.js";
+
+@theme {
+  --color-darkText: hsl(229, 25%, 31%);
+  --color-scoreText: hsl(229, 64%, 46%);
+  --color-headerOutline: hsl(217, 16%, 45%);
+  --color-emptyBg: hsl(214, 47%, 23%);
+  --color-blood: #dd405d;
+  --color-paper: hsl(230, 89%, 65%);
+  --color-scissors: hsl(40, 84%, 53%);
+  --color-lizard: hsl(261, 72%, 63%);
+  --color-spock: hsl(189, 58%, 57%);
+}
+
+:root {
+  --scissorsGradient: radial-gradient(
+    circle,
+    hsl(39, 89%, 49%),
+    hsl(40, 84%, 53%)
+  );
+  --paperGradient: radial-gradient(
+    circle,
+    hsl(230, 89%, 62%),
+    hsl(230, 89%, 65%)
+  );
+  --rockGradient: radial-gradient(
+    circle,
+    hsl(349, 71%, 52%),
+    hsl(349, 70%, 56%)
+  );
+  --lizardGradient: radial-gradient(
+    circle,
+    hsl(261, 73%, 60%),
+    hsl(261, 72%, 63%)
+  );
+  --spockGradient: radial-gradient(
+    circle,
+    hsl(189, 59%, 53%),
+    hsl(189, 58%, 57%)
+  );
+}
+
+body {
+  font-family: "Barlow Semi Condensed", serif;
+  background: radial-gradient(
+    circle at top,
+    hsl(214, 47%, 23%),
+    hsl(237, 49%, 15%)
+  );
+  @apply w-screen max-w-screen overflow-x-hidden text-white;
+}
+
+.rock {
+  background: var(--rockGradient);
+  box-shadow: 0px 10px 0px 0px hsla(349, 70%, 56%, 0.8);
+  -webkit-box-shadow: 0px 10px 0px 0px hsla(349, 70%, 56%, 0.8);
+  -moz-box-shadow: 0px 10px 0px 0px hsla(349, 70%, 56%, 0.8);
+}
+
+.paper {
+  background: var(--paperGradient);
+  box-shadow: 0px 10px 0px 0px hsla(230, 89%, 62%, 0.8);
+  -webkit-box-shadow: 0px 10px 0px 0px hsla(230, 89%, 62%, 0.8);
+  -moz-box-shadow: 0px 10px 0px 0px hsla(230, 89%, 62%, 0.8);
+}
+
+.scissors {
+  background: var(--scissorsGradient);
+  box-shadow: 0px 10px 0px 0px hsla(40, 84%, 53%, 0.8);
+  -webkit-box-shadow: 0px 10px 0px 0px hsla(40, 84%, 53%, 0.8);
+  -moz-box-shadow: 0px 10px 0px 0px hsla(40, 84%, 53%, 0.8);
+}
+
+.lizard {
+  background: var(--lizardGradient);
+  box-shadow: 0px 10px 0px 0px hsla(261, 72%, 63%, 0.8);
+  -webkit-box-shadow: 0px 10px 0px 0px hsla(261, 72%, 63%, 0.8);
+  -moz-box-shadow: 0px 10px 0px 0px hsla(261, 72%, 63%, 0.8);
+}
+
+.spock {
+  background: var(--spockGradient);
+  box-shadow: 0px 10px 0px 0px hsla(189, 58%, 57%, 0.8);
+  -webkit-box-shadow: 0px 10px 0px 0px hsla(189, 58%, 57%, 0.8);
+  -moz-box-shadow: 0px 10px 0px 0px hsla(189, 58%, 57%, 0.8);
+}
+
+.optionContainer {
+  box-shadow: 0px 5px 0px 3px rgba(0, 0, 0, 0.15) inset;
+  -webkit-box-shadow: 0px 5px 0px 3px rgba(0, 0, 0, 0.15) inset;
+  -moz-box-shadow: 0px 5px 0px 3px rgba(0, 0, 0, 0.15) inset;
+}
+
+.dot {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: red;
+  border-radius: 50%;
+}
+
+.homeBg {
+  filter: blur(6px);
+}

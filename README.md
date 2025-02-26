@@ -1,6 +1,6 @@
 # Frontend Mentor - Rock, Paper, Scissors solution
 
-This is a solution to the [Rock, Paper, Scissors challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/rock-paper-scissors-game-pTgwgvgH). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+This is a solution to the [Rock, Paper, Scissors challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/rock-paper-scissors-game-pTgwgvgH). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
 ## Table of contents
 
@@ -12,7 +12,6 @@ This is a solution to the [Rock, Paper, Scissors challenge on Frontend Mentor](h
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
   - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
 - [Author](#author)
 
 ## Overview
@@ -28,13 +27,13 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
-
+![](./Screenshot.png)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [GitHub](https://github.com/cosmo578/rock-paper-scissors-master)
+- Live Site URL: [Vercel](https://ralph-fm-rock-paper-scissors.vercel.app)
+
 
 ## My process
 
@@ -45,42 +44,44 @@ Users should be able to:
 - Flexbox
 - Desktop-first workflow
 - [React](https://reactjs.org/) - JS library
-- [TailindCSS](https://tailwindcss.com/) - CSS framework
+- [TailindCSS](https://tailwindcss.com/) - For styles
 - [Framer Motion](https://framer-motion.com/) - For Animations
-
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+I learned how to use set for checking valid conditions. It is just like an array, but each element is unique
 
-To see how you can add code snippets, see below:
-
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
 ```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
+const winConditions = new Set([
+  "scissors-paper",
+  "paper-rock",
+  "rock-lizard",
+  "lizard-spock",
+  "spock-scissors",
+  "scissors-lizard",
+  "paper-spock",
+  "rock-scissors",
+  "lizard-paper",
+  "spock-rock",
+]);
+
+if (userChoice === computerChoice) {
+  setStatus("draw");
+} else if (winConditions.has(`${userChoice}-${computerChoice}`)) {
+  setStatus("win");
+  setPlayerScore((prev) => prev + 1);
+  localStorage.setItem("secondGameUserScore", playerScore + 1);
+} else {
+  setStatus("lose");
 }
 ```
-
 
 ### Continued development
 
-
-### Useful resources
-
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
+I would love to improve in building complex animations using framer motion, and also building more games.
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@dev_ralph_](https://www.twitter.com/yourusername)
+- Website - [Developer Raphael](https://ralph-portfolio-v2.vercel.app)
+- Frontend Mentor - [CosMo578](https://www.frontendmentor.io/profile/CosMo578)
+- Twitter - [Developer Raphael](https://www.twitter.com/dev_ralph_)
